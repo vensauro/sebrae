@@ -1,25 +1,30 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: main
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
     delete: 'Delete {{collection}} “{{slug}}”'
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
-  
+
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Configurações"
-    name: "configs"
-    files: 
-      - label: "Gerais"
-        name: "configs gerais"
-        file: "src/content/config.json"
+  - label: 'Configurações'
+    name: 'configs'
+    files:
+      - label: 'Gerais'
+        name: 'configs gerais'
+        file: 'src/content/config.json'
         fields:
-          - { label: Título, name: title, hint: "O titulo da pagina", widget: string }
+          - {
+              label: Título,
+              name: title,
+              hint: 'O titulo da pagina',
+              widget: string,
+            }
   # - name: 'blog'
   #   label: 'Blog'
   #   folder: 'content/blog'
