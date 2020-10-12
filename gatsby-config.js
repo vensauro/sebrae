@@ -20,7 +20,13 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
-    'gatsby-plugin-graphql-codegen',
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        codegen: false
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
