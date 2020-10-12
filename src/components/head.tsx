@@ -1,54 +1,36 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-import { useLocation } from '@reach/router'
+import { WindowLocation } from '@reach/router'
 
 import schemaGenerator from '../utils/schemaGenerator'
-import { Query } from '../../graphql-types'
 
-export const siteMetaDataQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        siteTitle
-        siteTitleShort
-        siteDescription
-        siteUrl
-        themeColor
-        social {
-          twitter
-        }
-      }
-    }
+type Props = Partial<{
+  siteTitle: string
+  siteDescription: string
+  siteUrl: string
+  pageTitle: string
+  pageTitleFull: string
+  themeColor: string
+  social: {
+    twitter?: string
   }
-`
+  imageUrl: string
+  canonical: string
+  location: WindowLocation<unknown>
+}>
 
-type SiteMetaDataQuery = Pick<Query, 'site'>
-
-type Props = {
-  pageTitle?: string,
-  imageUrl?: string,
-}
-
-export function Head({ pageTitle, imageUrl }: Props) {
-  const { pathname } = useLocation()
-
-  const {
-    site: {
-      siteMetadata: {
-        siteDescription,
-        siteTitle,
-        siteTitleShort,
-        siteUrl,
-        social,
-        themeColor,
-      },
-    },
-  } = useStaticQuery<SiteMetaDataQuery>(siteMetaDataQuery)
-
-  const pageTitleFull = pageTitle ? `${siteTitle}: ${pageTitle}` : siteTitle
-  const canonical = siteUrl + (pathname ?? '')
-
+export function Head({
+  siteTitle,
+  siteDescription,
+  siteUrl,
+  pageTitle,
+  pageTitleFull = pageTitle ? `${siteTitle}: ${pageTitle}` : siteTitle,
+  themeColor,
+  social,
+  imageUrl,
+  location,
+  canonical = siteUrl + (location?.pathname || ''),
+}: Props) {
   return (
     <Helmet>
       <html lang="pt-br" />
