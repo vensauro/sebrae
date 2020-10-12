@@ -36,6 +36,14 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images\/.*\.svg$/,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify-cms',
