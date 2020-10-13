@@ -39,7 +39,7 @@ const ButtonStyle = styled.button<{ bg?: string }>`
   max-width: 460px;
   max-height: 85px;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   padding: 15px 0;
 
@@ -61,10 +61,15 @@ const ButtonText = styled.div`
   width: 80%;
 `
 
-export function Button({ children, ...props }) {
+type Props = {
+  children: string
+  bg?: string
+} & React.ComponentProps<'button'>
+
+export function Button({ children, ...props }: Props) {
   return (
     <ButtonStyle {...props}>
-      <ButtonText>{children}</ButtonText>
+      <ButtonText>{children.toUpperCase()}</ButtonText>
     </ButtonStyle>
   )
 }

@@ -14,6 +14,8 @@ public_folder: /img
 collections:
   - label: 'Conteudos'
     name: 'conteudos'
+    media_folder: 'src/content/images'
+    public_folder: 'src/content/images'
     files:
       - label: 'Seção 1'
         name: 'section1'

@@ -22,7 +22,7 @@ type Props = {
   content: string
 }
 
-export function FirstSession({ content }: Props) {
+export function FirstSection({ content }: Props) {
   return (
     <section css={containerStyles}>
       <p css={contentStyle}>{content}</p>
