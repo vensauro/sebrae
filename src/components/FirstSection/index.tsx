@@ -18,7 +18,6 @@ const contentStyle = css({
   margin: 'auto 0',
   textAlign: 'center',
   lineHeight: '1.4',
-  fontWeight: 'lighter',
 })
 
 const spanShadow = css`
@@ -34,8 +33,6 @@ export function FirstSection({ content, title }: Props) {
   return (
     <section css={containerStyles}>
       <p css={contentStyle}>
-        <span css={spanShadow}>{title}</span>
-        <br />
         {content}
       </p>
     </section>
