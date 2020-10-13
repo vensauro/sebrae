@@ -2,11 +2,15 @@ import React from 'react'
 import { css } from '@emotion/core'
 import SebraeLogo from '../../images/sebrae-logo.svg'
 import { theme } from '../../global.css'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Query } from '../../../graphql-types'
+import Img from 'gatsby-image'
 
 const sectionStyle = css({
-  background: '#FEFAA3',
-  height: '100vh',
+  background: '#5b1b26',
+  // height: '100vh',
   width: '100%',
+  position: 'relative',
 })
 
 const brandContainer = css({
@@ -14,6 +18,8 @@ const brandContainer = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  position: 'absolute',
+  top: 0,
   [theme.maxq[0]]: {
     flexDirection: 'column',
     height: '40%',
@@ -40,7 +46,7 @@ const brandText = css({
 })
 
 const pageTextStyle = css({
-  width: '35%',
+  width: '80%',
   fontSize: '3.3rem',
   color: '#CC878C',
   '& span': {
@@ -53,9 +59,23 @@ const pageTextStyle = css({
   },
 })
 
+const queries = graphql`
+  query LandImages {
+    imageSharp(original: { src: { regex: "/banner-lading-page_croped/" } }) {
+      fluid(maxWidth: 3120, maxHeight: 2290, quality: 60) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`
+
+type Querie = Pick<Query, 'imageSharp'>
+
 export function Home() {
+  const { imageSharp } = useStaticQuery<Querie>(queries)
   return (
     <section css={sectionStyle}>
+      <Img fluid={imageSharp.fluid} />
       <div css={brandContainer}>
         <SebraeLogo css={brandLogo} />
         <p css={brandText}>APRESENTA</p>
@@ -65,6 +85,11 @@ export function Home() {
         css={{
           display: 'flex',
           justifyContent: 'center',
+          position: 'absolute',
+          top: 0,
+          height: '100%',
+          paddingTop: '20%',
+          paddingLeft: '10%',
         }}
       >
         <h1 css={pageTextStyle}>
