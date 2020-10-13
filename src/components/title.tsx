@@ -10,15 +10,16 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  text-align: center;
 `
 type Props = {
   children: string
   color?: string
-}
+} & React.ComponentPropsWithoutRef<typeof Container>
 
-export function Title({ children, color }: Props) {
+export function Title({ children, color, ...props }: Props) {
   return (
-    <Container>
+    <Container {...props}>
       <H2 color={color}>{children}</H2>
     </Container>
   )

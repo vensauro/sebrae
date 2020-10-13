@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { Title } from '../title'
 
 const containerStyles = css({
   width: '100%',
@@ -8,6 +9,7 @@ const containerStyles = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  flexDirection: 'column',
 })
 
 const contentStyle = css({
@@ -32,9 +34,10 @@ type Props = {
 export function FirstSection({ content, title }: Props) {
   return (
     <section css={containerStyles}>
-      <p css={contentStyle}>
-        {content}
-      </p>
+      <Title color="#FEFAA3" css={{ maxWidth: 980, margin: 'auto 0' }}>
+        {title}
+      </Title>
+      <p css={contentStyle}>{content}</p>
     </section>
   )
 }
