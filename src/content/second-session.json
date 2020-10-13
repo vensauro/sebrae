@@ -1,7 +1,7 @@
 {
   "button1": "Sou professor(a), quero participar",
   "button2": "Quero ser professor do novo mundo",
-  "content": [
+  "section2": [
     {
       "description": "Você vai aprender sem sair de casa",
       "icon": "/img/online-learning.svg"

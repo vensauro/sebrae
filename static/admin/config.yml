@@ -19,12 +19,8 @@ collections:
         name: 'section1'
         file: 'src/content/first-session.json'
         fields:
-          - {
-              label: Conteudo,
-              name: content,
-              hint: 'O conteudo mostrado',
-              widget: string,
-            }
+          - { label: Título, name: title, widget: string }
+          - { label: Conteudo, name: introText, widget: string }
       - label: 'Seção 2'
         name: 'section2'
         file: 'src/content/second-session.json'
@@ -32,7 +28,7 @@ collections:
           - { label: 'Botao 1', name: 'button1', widget: string }
           - { label: 'Botao 2', name: 'button2', widget: string }
           - label: 'Conteudos'
-            name: 'content'
+            name: 'section2'
             widget: list
             fields:
               - { label: Icone, name: icon, widget: image }
@@ -43,7 +39,7 @@ collections:
         fields:
           - { label: 'Botao', name: 'button', widget: string }
           - label: 'Conteudos'
-            name: 'content'
+            name: 'section3'
             widget: list
             fields:
               - { label: Imagem, name: image, widget: image }

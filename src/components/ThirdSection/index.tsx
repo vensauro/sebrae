@@ -1,10 +1,9 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { Button } from '../button'
-import Iconzinho from '../../images/ebook.svg'
 import { theme } from '../../global.css'
 
-function Content({ icon: Icon, description }) {
+function Content({ icon, description }) {
   return (
     <div
       css={{
@@ -13,16 +12,18 @@ function Content({ icon: Icon, description }) {
         alignItems: 'center',
         flexDirection: 'column',
         color: '#903E58',
-        fill: '#903E58',
         textAlign: 'center',
         [theme.maxq[0]]: {
           width: '100%',
         },
       }}
     >
-      <Icon
+      <div
         css={{
           height: 120,
+          width: '100%',
+          background: '#903E58',
+          mask: `url(${icon}) no-repeat center`,
         }}
       />
       <p
@@ -51,7 +52,14 @@ const contentContainer = css({
   },
 })
 
-export function ThirdSession() {
+type Props = {
+  button1: string
+  button2: string
+  section2: Array<{ description: string; icon: string }>
+}
+
+export function ThirdSession({ button1, button2, section2 }: Props) {
+  console.log({ section2 })
   return (
     <section
       css={{
@@ -65,16 +73,13 @@ export function ThirdSession() {
         flexDirection: 'column',
       }}
     >
-      <Button>Sou professor(a), quero participar</Button>
+      <Button>{button1}</Button>
       <div css={contentContainer}>
-        {Array.from({ length: 4 }).map((e) => (
-          <Content
-            icon={Iconzinho}
-            description="Todo professor deve se preparar para a transformação digital"
-          />
+        {section2.map((content) => (
+          <Content icon={content.icon} description={content.description} />
         ))}
       </div>
-      <Button bg="#D65F54">Quero ser professor do novo mundo</Button>
+      <Button bg="#D65F54">{button2}</Button>
     </section>
   )
 }

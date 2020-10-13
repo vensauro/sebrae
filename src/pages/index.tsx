@@ -1,19 +1,23 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
 import { Home } from '../components/Home'
-import { FirstSession } from '../components/FirstSession'
-import { File } from '../../graphql-types'
-import { ThirdSession } from '../components/ThirdSession'
+import { FirstSession } from '../components/FirstSection'
+import { ThirdSession } from '../components/ThirdSection'
 
 type Props = {
   data: {
-    firstSession: {
+    firstSection: {
       childContentJson: {
-        content: string
+        introText: string
+      }
+    }
+    secondSection: {
+      childContentJson: {
+        button1: string
+        button2: string
+        section2: Array<{ description: string; icon: string }>
       }
     }
   }
@@ -22,18 +26,30 @@ type Props = {
 const IndexPage = ({ data }: Props) => (
   <Layout>
     <Home />
-    <FirstSession content={data.firstSession.childContentJson.content} />
-    <ThirdSession />
+    <FirstSession content={data.firstSection.childContentJson.introText} />
+    <ThirdSession {...data.secondSection.childContentJson} />
   </Layout>
 )
 
 export const query = graphql`
   {
-    firstSession: file(base: { eq: "first-session.json" }) {
+    firstSection: file(base: { eq: "first-session.json" }) {
       id
       childContentJson {
-        content
+        introText
         id
+      }
+    }
+    secondSection: file(base: { eq: "second-session.json" }) {
+      id
+      childContentJson {
+        introText
+        button1
+        button2
+        section2 {
+          description
+          icon
+        }
       }
     }
   }
