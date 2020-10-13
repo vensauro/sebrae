@@ -40,7 +40,7 @@ const brandText = css({
   fontSize: '2rem',
   fontWeight: 'lighter',
   marginLeft: 30,
-  marginBottom: 50
+  marginBottom: 50,
   [theme.maxq[0]]: {
     marginLeft: 0,
     marginBottom: 0,

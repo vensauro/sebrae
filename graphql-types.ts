@@ -3175,6 +3175,57 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type FooterImagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FooterImagesQuery = { education?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }>, undime?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }>, governo?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> };
+
+export type LandImagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandImagesQuery = { desktopImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }>, mobileImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> };
+
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_1_Query = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+
+export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<(
+      Pick<SiteSiteMetadata, 'siteTitle' | 'siteTitleShort' | 'siteDescription' | 'siteUrl' | 'themeColor'>
+      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter_url' | 'facebook_url' | 'youtube_url' | 'instagram_url' | 'twitter'>> }
+    )> }> };
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_3_Query = { firstSection?: Maybe<(
+    Pick<File, 'id'>
+    & { childContentJson?: Maybe<Pick<ContentJson, 'introText' | 'title' | 'id'>> }
+  )>, secondSection?: Maybe<(
+    Pick<File, 'id'>
+    & { childContentJson?: Maybe<(
+      Pick<ContentJson, 'introText' | 'button1' | 'button2'>
+      & { section2?: Maybe<Array<Maybe<Pick<ContentJsonSection2, 'description' | 'icon'>>>> }
+    )> }
+  )>, thirdSection?: Maybe<{ frontmatter?: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'button'>
+      & { section3?: Maybe<Array<Maybe<(
+        Pick<MarkdownRemarkFrontmatterSection3, 'date' | 'description' | 'title'>
+        & { image?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebp_TracedSvgFragment> }> }> }
+      )>>> }
+    )> }>, metadata?: Maybe<{ siteMetadata?: Maybe<(
+      Pick<SiteSiteMetadata, 'siteOfficial'>
+      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'facebook_url' | 'instagram_url' | 'twitter' | 'twitter_url' | 'youtube_url' | 'telegram_url' | 'linkedin_url'>> }
+    )> }> };
+
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 export type GatsbyImageSharpFixed_TracedSvgFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
