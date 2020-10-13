@@ -11,8 +11,8 @@ import { MarkdownRemarkFrontmatter } from '../../../graphql-types'
 const Section = styled.section`
   /* height: 60vh; */
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 35px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   background: rgb(228, 180, 121);
   background: linear-gradient(
     135deg,
@@ -41,11 +41,16 @@ const ItemsContainer = styled.div`
   }
 `
 
-const ArrowContainer = styled.div`
+const ArrowContainer = styled.button`
   height: 100%;
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
 `
 
 const caretStyle = css({
@@ -120,7 +125,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                 }}
               >
                 <Img fixed={e.image.childImageSharp.fixed} />
-                <div css={{ display: 'flex', width: 300 }}>
+                <div css={{ display: 'flex', width: 300, marginTop: 10 }}>
                   <div
                     css={{
                       width: '35%',
