@@ -134,7 +134,11 @@ export function Footer({ social }: Props) {
             },
           }}
         >
-          <a href="www.ba.sebrae.com.br" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.sebrae.com.br/sites/PortalSebrae/ufs/ba"
+            target="_blank"
+            rel="noreferrer"
+          >
             www.ba.sebrae.com.br
           </a>
           <a
