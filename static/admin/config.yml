@@ -35,32 +35,25 @@ collections:
             fields:
               - { label: Icone, name: icon, widget: image }
               - { label: Descricao, name: description, widget: string }
-      - label: 'Seção 3'
+
+  - name: Programação
+    label: programação
+    label_singular: 'program'
+    create: true
+    folder: src/content
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - { label: 'Botao', name: 'button', widget: string }
+      - label: 'Conteudos'
         name: 'section3'
-        file: 'src/content/third-session.json'
+        widget: list
         fields:
-          - { label: 'Botao', name: 'button', widget: string }
-          - label: 'Conteudos'
-            name: 'section3'
-            widget: list
-            fields:
-              - { label: Imagem, name: image, widget: image }
-              - { label: Título, name: title, widget: string }
-              - { label: Descricao, name: description, widget: string }
-              - { label: Data, name: date, widget: datetime }
-  - label: 'Configurações'
-    name: 'configs'
-    files:
-      - label: 'Gerais'
-        name: 'configs gerais'
-        file: 'src/content/config.json'
-        fields:
-          - {
-              label: Título,
-              name: title,
-              hint: 'O titulo da pagina',
-              widget: string,
-            }
+          - { label: Imagem, name: image, widget: image }
+          - { label: Título, name: title, widget: string }
+          - { label: Descricao, name: description, widget: string }
+          - { label: Data, name: date, widget: datetime }
   # - name: 'blog'
   #   label: 'Blog'
   #   folder: 'content/blog'

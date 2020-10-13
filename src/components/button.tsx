@@ -38,7 +38,7 @@ const ButtonStyle = styled.button<{ bg?: string }>`
 
   max-width: 460px;
   max-height: 85px;
-  color: white;
+  color: ${(p) => p.color || 'white'};
   font-size: 1.8rem;
 
   padding: 15px 0;
@@ -64,6 +64,7 @@ const ButtonText = styled.div`
 type Props = {
   children: string
   bg?: string
+  color?: string
 } & React.ComponentProps<'button'>
 
 export function Button({ children, ...props }: Props) {

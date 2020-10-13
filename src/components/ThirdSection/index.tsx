@@ -22,7 +22,9 @@ const Section = styled.section`
 
 const ItemsContainer = styled.div`
   display: flex;
+  justify-content: space-evenly;
   width: 100%;
+  color: white;
 `
 
 // const
@@ -44,8 +46,8 @@ export function ThirdSection({ buttonText, content }: Props) {
       <ItemsContainer>
         {content.map((e) => (
           <div>
-            <img src={e.image} />
-            <div>
+            <img src={e.image} css={{ width: 300 }} />
+            <div css={{ display: 'flex' }}>
               <div>hora</div>
               <div>
                 <span>titulo</span>
