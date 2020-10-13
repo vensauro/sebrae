@@ -53,12 +53,13 @@ const contentContainer = css({
 })
 
 type Props = {
-  button1: string
-  button2: string
-  section2: Array<{ description: string; icon: string }>
+  button1?: string
+  button2?: string
+  section2?: Array<{ description?: string; icon?: string }>
+  link?: string
 }
 
-export function SecondSection({ button1, button2, section2 }: Props) {
+export function SecondSection({ button1, button2, section2, link }: Props) {
   return (
     <section
       css={{
@@ -72,7 +73,7 @@ export function SecondSection({ button1, button2, section2 }: Props) {
         flexDirection: 'column',
       }}
     >
-      <Button>{button1}</Button>
+      <Button link={link}>{button1}</Button>
       <div css={contentContainer}>
         {section2.map((content, idx) => (
           <Content
@@ -82,7 +83,9 @@ export function SecondSection({ button1, button2, section2 }: Props) {
           />
         ))}
       </div>
-      <Button bg="#D65F54">{button2}</Button>
+      <Button bg="#D65F54" link={link}>
+        {button2}
+      </Button>
     </section>
   )
 }

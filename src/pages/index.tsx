@@ -7,51 +7,36 @@ import { FirstSection } from '../components/FirstSection'
 import { SecondSection } from '../components/SecondSection'
 import { ThirdSection } from '../components/ThirdSection'
 import { Footer } from '../components/Footer'
+import { Query } from '../../graphql-types'
 
 type Props = {
   data: {
-    firstSection: {
-      childContentJson: {
-        introText: string
-      }
-    }
-    secondSection: {
-      childContentJson: {
-        button1: string
-        button2: string
-        section2: Array<{ description: string; icon: string }>
-      }
-    }
-    thirdSection: {
-      frontmatter: {
-        button: string
-        section3: Array<{
-          date: string
-          title: string
-          description: string
-          image: {
-            childImageSharp: {
-              fixed: any
-            }
-          }
-        }>
-      }
-    }
+    firstSection: Query['file']
+    secondSection: Query['file']
+    thirdSection: Query['markdownRemark']
+    metadata: Query['site']
   }
 }
 
-const IndexPage = ({ data }: Props) => (
-  <Layout>
-    <Home />
-    <FirstSection content={data.firstSection.childContentJson.introText} />
-    <SecondSection {...data.secondSection.childContentJson} />
-    <ThirdSection
-      buttonText={data.thirdSection.frontmatter.button}
-      content={data.thirdSection.frontmatter.section3}
-    />
-    <Footer />
-  </Layout>
-)
+const IndexPage = ({ data }: Props) => {
+  const { siteOfficial, social } = data.metadata.siteMetadata
+  return (
+    <Layout>
+      <Home />
+      <FirstSection content={data.firstSection.childContentJson.introText} />
+      <SecondSection
+        {...data.secondSection.childContentJson}
+        link={siteOfficial}
+      />
+      <ThirdSection
+        link={siteOfficial}
+        buttonText={data.thirdSection.frontmatter.button}
+        content={data.thirdSection.frontmatter.section3}
+      />
+      <Footer social={social} />
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
@@ -88,6 +73,19 @@ export const query = graphql`
               }
             }
           }
+        }
+      }
+    }
+
+    metadata: site {
+      siteMetadata {
+        siteOfficial
+        social {
+          facebook_url
+          instagram_url
+          twitter
+          twitter_url
+          youtube_url
         }
       }
     }

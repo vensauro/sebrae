@@ -31,7 +31,7 @@ function LightenDarkenColor(col, amt) {
   return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16)
 }
 
-const ButtonStyle = styled.button<{ bg?: string }>`
+const ButtonStyle = styled.a<{ bg?: string; color?: string }>`
   border-radius: 20px;
   border: none;
   background: ${(p) => p.bg || '#903E58'};
@@ -47,6 +47,9 @@ const ButtonStyle = styled.button<{ bg?: string }>`
   justify-content: center;
   align-items: center;
 
+  cursor: pointer;
+  text-decoration: none;
+
   &:active {
     background-color: ${(p) => LightenDarkenColor(p.bg || '#903E58', -20)};
     box-shadow: 3px 3px 1px #888;
@@ -59,17 +62,19 @@ const ButtonStyle = styled.button<{ bg?: string }>`
 
 const ButtonText = styled.div`
   width: 80%;
+  text-align: center;
 `
 
 type Props = {
   children: string
   bg?: string
   color?: string
-} & React.ComponentProps<'button'>
+  link?: string
+} & React.ComponentProps<'a'>
 
-export function Button({ children, ...props }: Props) {
+export function Button({ children, link, ...props }: Props) {
   return (
-    <ButtonStyle {...props}>
+    <ButtonStyle href={link} target="_blank" {...props}>
       <ButtonText>{children.toUpperCase()}</ButtonText>
     </ButtonStyle>
   )

@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import { theme } from '../../global.css'
 import { BsFillCaretRightFill, BsFillCaretLeftFill } from 'react-icons/bs'
 import { css } from '@emotion/core'
+import { MarkdownRemarkFrontmatter } from '../../../graphql-types'
 
 const Section = styled.section`
   /* height: 60vh; */
@@ -55,23 +56,13 @@ const caretStyle = css({
   },
 })
 
-// const
-
 type Props = {
-  content: Array<{
-    date: string
-    title: string
-    description: string
-    image: {
-      childImageSharp: {
-        fixed: any
-      }
-    }
-  }>
+  content: MarkdownRemarkFrontmatter['section3']
   buttonText: string
+  link: string
 }
 
-export function ThirdSection({ buttonText, content }: Props) {
+export function ThirdSection({ buttonText, content, link }: Props) {
   const [slidePosition, setSlidePosition] = useState(0)
 
   function prevPosition() {
@@ -160,7 +151,7 @@ export function ThirdSection({ buttonText, content }: Props) {
           <BsFillCaretRightFill css={caretStyle} />
         </ArrowContainer>
       </div>
-      <Button bg="#FEFAA3" color="#D65F54">
+      <Button bg="#FEFAA3" color="#D65F54" link={link}>
         {buttonText}
       </Button>
     </Section>

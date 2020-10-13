@@ -12,6 +12,7 @@ import IgIcon from '../../images/icon_ig.svg'
 import { theme } from '../../global.css'
 
 import Img from 'gatsby-image'
+import { SiteSiteMetadataSocial } from '../../../graphql-types'
 
 const StyledFooter = styled.footer`
   padding: 15px;
@@ -60,11 +61,26 @@ const query = graphql`
   }
 `
 
-type Props = {}
-export function Footer({}: Props) {
+function SocialLink({
+  icon: Icon,
+  src,
+}: {
+  icon: React.ComponentType
+  src?: string
+}) {
+  return (
+    <a href={src} target="_blank">
+      <Icon css={iconStyle} />
+    </a>
+  )
+}
+
+type Props = {
+  social: SiteSiteMetadataSocial
+}
+export function Footer({ social }: Props) {
   const data = useStaticQuery(query)
 
-  console.log(data)
   return (
     <StyledFooter>
       <div
@@ -91,6 +107,7 @@ export function Footer({}: Props) {
             width: '100%',
             display: 'flex',
             justifyContent: 'space-evenly',
+            alignItems: 'center',
           }}
         >
           <Img fixed={data.education.fixed} />
@@ -104,14 +121,28 @@ export function Footer({}: Props) {
             justifyContent: 'center',
             fontSize: '1rem',
             fontWeight: 'lighter',
-            color: '#1F76BF',
-            '& p': {
+            margin: '20px 0',
+            '& a': {
               fontFamily: 'sans-serif',
+              textDecoration: 'none',
+              color: '#1F76BF',
+              fontSize: '1.2rem',
             },
           }}
         >
-          <p>wwww.ba.sebrae.com.br</p>
-          <p css={{ fontWeight: 'bold', marginLeft: 30 }}>0800 570 0800</p>
+          <a
+            href="https://www.sebrae.com.br/sites/PortalSebrae/ufs/ba"
+            target="_blank"
+          >
+            wwww.ba.sebrae.com.br
+          </a>
+          <a
+            href="tel:0800 570 0800"
+            target="_blank"
+            css={{ fontWeight: 'bold', marginLeft: 30 }}
+          >
+            0800 570 0800
+          </a>
         </div>
         <div
           css={{
@@ -128,10 +159,10 @@ export function Footer({}: Props) {
           }}
         >
           <div>
-            <FbIcon css={iconStyle} />
-            <TtIcon css={iconStyle} />
-            <YtIcon css={iconStyle} />
-            <IgIcon css={iconStyle} />
+            <SocialLink icon={FbIcon} src={social.facebook_url} />
+            <SocialLink icon={TtIcon} src={social.twitter_url} />
+            <SocialLink icon={YtIcon} src={social.youtube_url} />
+            <SocialLink icon={IgIcon} src={social.instagram_url} />
           </div>
           <p>SebraeBahia</p>
         </div>
