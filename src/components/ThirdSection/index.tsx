@@ -73,7 +73,7 @@ type Props = {
 
 export function ThirdSection({ buttonText, content }: Props) {
   const [slidePosition, setSlidePosition] = useState(0)
-  console.log(slidePosition)
+
   function prevPosition() {
     if (slidePosition > 0) {
       setSlidePosition(slidePosition - 1)

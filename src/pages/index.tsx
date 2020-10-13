@@ -6,6 +6,7 @@ import { Home } from '../components/Home'
 import { FirstSection } from '../components/FirstSection'
 import { SecondSection } from '../components/SecondSection'
 import { ThirdSection } from '../components/ThirdSection'
+import { Footer } from '../components/Footer'
 
 type Props = {
   data: {
@@ -48,6 +49,7 @@ const IndexPage = ({ data }: Props) => (
       buttonText={data.thirdSection.frontmatter.button}
       content={data.thirdSection.frontmatter.section3}
     />
+    <Footer />
   </Layout>
 )
 
