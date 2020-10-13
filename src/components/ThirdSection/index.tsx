@@ -11,7 +11,7 @@ import { MarkdownRemarkFrontmatter } from '../../../graphql-types'
 const Section = styled.section`
   /* height: 60vh; */
   width: 100%;
-  padding: 30px 0;
+  padding-bottom: 20px;
   background: rgb(228, 180, 121);
   background: linear-gradient(
     135deg,
@@ -32,7 +32,7 @@ const ItemsContainer = styled.div`
   align-items: center;
   width: 100%;
   color: white;
-  margin: 50px 0;
+  margin-bottom: 25px;
 
   ${theme.maxq[0]} {
     flex-direction: column;
@@ -96,7 +96,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
           align-items: center;
           width: 100%;
           color: white;
-          margin: 50px 0;
+          /* margin: 50px 0; */
         `}
       >
         <ArrowContainer onClick={prevPosition}>

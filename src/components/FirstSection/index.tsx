@@ -13,9 +13,11 @@ const containerStyles = css({
 const contentStyle = css({
   color: '#FEFAA3',
   fontSize: '1.5rem',
-  width: '80%',
+  width: '90%',
   maxWidth: 980,
   margin: 'auto 0',
+  textAlign: 'center',
+  lineHeight: '1.4',
 })
 
 type Props = {

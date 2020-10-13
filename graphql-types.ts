@@ -3177,7 +3177,7 @@ export type FooterImagesQuery = { education?: Maybe<{ fixed?: Maybe<GatsbyImageS
 export type LandImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LandImagesQuery = { imageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> };
+export type LandImagesQuery = { desktopImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }>, mobileImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> };
 
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
