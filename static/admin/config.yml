@@ -37,11 +37,11 @@ collections:
               - { label: Descricao, name: description, widget: string }
 
   - name: Programação
-    label: programação
-    label_singular: 'program'
-    create: true
+    label: Programas
+    label_singular: 'programa'
+    create: false
     folder: src/content
-    path: '{{slug}}/index'
+    path: 'program/index'
     media_folder: ''
     public_folder: ''
     fields:

@@ -53,7 +53,7 @@ const ButtonStyle = styled.button<{ bg?: string }>`
   }
 
   ${theme.maxq[0]} {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 `
 

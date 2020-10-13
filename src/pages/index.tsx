@@ -22,13 +22,17 @@ type Props = {
       }
     }
     thirdSection: {
-      childContentJson: {
+      frontmatter: {
         button: string
         section3: Array<{
           date: string
           title: string
           description: string
-          image: string
+          image: {
+            childImageSharp: {
+              fixed: any
+            }
+          }
         }>
       }
     }
@@ -41,8 +45,8 @@ const IndexPage = ({ data }: Props) => (
     <FirstSection content={data.firstSection.childContentJson.introText} />
     <SecondSection {...data.secondSection.childContentJson} />
     <ThirdSection
-      buttonText={data.thirdSection.childContentJson.button}
-      content={data.thirdSection.childContentJson.section3}
+      buttonText={data.thirdSection.frontmatter.button}
+      content={data.thirdSection.frontmatter.section3}
     />
   </Layout>
 )
@@ -68,15 +72,20 @@ export const query = graphql`
         }
       }
     }
-    thirdSection: file(base: { eq: "third-session.json" }) {
-      id
-      childContentJson {
+    thirdSection: markdownRemark {
+      frontmatter {
         button
         section3 {
           date
-          title
           description
-          image
+          title
+          image {
+            childImageSharp {
+              fixed(width: 300) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
         }
       }
     }
