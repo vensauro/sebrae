@@ -51,7 +51,7 @@ const pageTextContainerStyle = css({
   position: 'absolute',
   top: 0,
   height: '100%',
-  paddingTop: '20%',
+  paddingTop: '14%',
   paddingLeft: '10%',
   [theme.maxq[0]]: {
     paddingTop: '40%',

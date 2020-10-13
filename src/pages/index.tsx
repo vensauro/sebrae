@@ -23,7 +23,10 @@ const IndexPage = ({ data }: Props) => {
   return (
     <Layout>
       <Home />
-      <FirstSection content={data.firstSection.childContentJson.introText} />
+      <FirstSection
+        content={data.firstSection.childContentJson.introText}
+        title={data.firstSection.childContentJson.title}
+      />
       <SecondSection
         {...data.secondSection.childContentJson}
         link={siteOfficial}
@@ -44,6 +47,7 @@ export const query = graphql`
       id
       childContentJson {
         introText
+        title
         id
       }
     }

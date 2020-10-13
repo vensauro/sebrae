@@ -3202,7 +3202,7 @@ export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_3_Query = { firstSection?: Maybe<(
     Pick<File, 'id'>
-    & { childContentJson?: Maybe<Pick<ContentJson, 'introText' | 'id'>> }
+    & { childContentJson?: Maybe<Pick<ContentJson, 'introText' | 'title' | 'id'>> }
   )>, secondSection?: Maybe<(
     Pick<File, 'id'>
     & { childContentJson?: Maybe<(
@@ -3219,11 +3219,6 @@ export type Unnamed_3_Query = { firstSection?: Maybe<(
       Pick<SiteSiteMetadata, 'siteOfficial'>
       & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'facebook_url' | 'instagram_url' | 'twitter' | 'twitter_url' | 'youtube_url'>> }
     )> }> };
-
-export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_4_Query = { site?: Maybe<Pick<Site, 'buildTime'>> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
