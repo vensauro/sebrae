@@ -125,10 +125,16 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                 }}
               >
                 <Img fixed={e.image.childImageSharp.fixed} />
-                <div css={{ display: 'flex', width: 300, marginTop: 10 }}>
+                <div
+                  css={{
+                    display: 'flex',
+                    width: 300,
+                    marginTop: 10,
+                    justifyContent: 'center',
+                  }}
+                >
                   <div
                     css={{
-                      width: '35%',
                       display: 'flex',
                       flexDirection: 'column',
                       fontSize: '1.3rem',
@@ -139,15 +145,9 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                     </span>
                     <span>{date.getHours()}h</span>
                   </div>
-                  <div
-                    css={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}
-                  >
-                    <span css={{ fontSize: '1.7rem' }}>{e.title}</span>
-                    <span>{e.description}</span>
-                  </div>
+                  <span css={{ fontSize: '1.6rem', marginLeft: 15 }}>
+                    {e.title}
+                  </span>
                 </div>
               </div>
             )

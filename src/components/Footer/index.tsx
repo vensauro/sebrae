@@ -115,7 +115,7 @@ export function Footer({ social }: Props) {
           }}
         >
           <Img fixed={data.education.fixed} />
-          <Img fixed={data.undime.fixed} />
+          {/* <Img fixed={data.undime.fixed} /> */}
           <Img fixed={data.governo.fixed} />
         </div>
         <div
