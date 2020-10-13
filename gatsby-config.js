@@ -1,7 +1,14 @@
 const siteMetadata = require('./siteMetadata')
+const path = require('path')
 
 module.exports = {
-  siteMetadata,
+  siteMetadata: {
+    ...siteMetadata,
+    themeColor: '#933B60',
+    backgroundColor: '#fff',
+    pathPrefix: null,
+    logo: path.resolve(__dirname, 'src/images/icon.png'),
+  },
   plugins: [
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
@@ -24,8 +31,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        codegen: false
-      }
+        codegen: false,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

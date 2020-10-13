@@ -17,6 +17,25 @@ collections:
     media_folder: 'src/content/images'
     public_folder: 'src/content/images'
     files:
+      - label: 'Informações gerais'
+        name: 'geral'
+        file: '/siteMetadata.json'
+        fields:
+          - { label: siteTitle, name: siteTitle, widget: string }
+          - { label: siteTitleShort, name: siteTitleShort, widget: string }
+          - { label: siteDescription, name: siteDescription, widget: string }
+          - { label: siteUrl, name: siteUrl, widget: string }
+          - { label: siteOfficial, name: siteOfficial, widget: string }
+          - label: Redes Sociais
+            name: social
+            widget: object
+            fields:
+              - { label: nome Twitter, name: twitter, widget: string }
+              - { label: twitter url, name: twitter_url, widget: string }
+              - { label: facebook url, name: facebook_url, widget: string }
+              - { label: youtube url, name: youtube_url, widget: string }
+              - { label: instagram url, name: instagram_url, widget: string }
+
       - label: 'Seção 1'
         name: 'section1'
         file: 'src/content/first-session.json'
