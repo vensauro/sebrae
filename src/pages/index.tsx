@@ -90,6 +90,8 @@ export const query = graphql`
           twitter
           twitter_url
           youtube_url
+          telegram_url
+          linkedin_url
         }
       }
     }

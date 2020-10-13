@@ -38,11 +38,11 @@ export type ContentJson = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  title?: Maybe<Scalars['String']>;
-  introText?: Maybe<Scalars['String']>;
   button1?: Maybe<Scalars['String']>;
   button2?: Maybe<Scalars['String']>;
   section2?: Maybe<Array<Maybe<ContentJsonSection2>>>;
+  title?: Maybe<Scalars['String']>;
+  introText?: Maybe<Scalars['String']>;
 };
 
 export type ContentJsonConnection = {
@@ -159,24 +159,24 @@ export type ContentJsonFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'title'
-  | 'introText'
   | 'button1'
   | 'button2'
   | 'section2'
   | 'section2___description'
-  | 'section2___icon';
+  | 'section2___icon'
+  | 'title'
+  | 'introText';
 
 export type ContentJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  title?: Maybe<StringQueryOperatorInput>;
-  introText?: Maybe<StringQueryOperatorInput>;
   button1?: Maybe<StringQueryOperatorInput>;
   button2?: Maybe<StringQueryOperatorInput>;
   section2?: Maybe<ContentJsonSection2FilterListInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  introText?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentJsonGroupConnection = {
@@ -905,13 +905,13 @@ export type FileFieldsEnum =
   | 'childContentJson___internal___mediaType'
   | 'childContentJson___internal___owner'
   | 'childContentJson___internal___type'
-  | 'childContentJson___title'
-  | 'childContentJson___introText'
   | 'childContentJson___button1'
   | 'childContentJson___button2'
   | 'childContentJson___section2'
   | 'childContentJson___section2___description'
   | 'childContentJson___section2___icon'
+  | 'childContentJson___title'
+  | 'childContentJson___introText'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___button'
@@ -2182,11 +2182,11 @@ export type QueryContentJsonArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  title?: Maybe<StringQueryOperatorInput>;
-  introText?: Maybe<StringQueryOperatorInput>;
   button1?: Maybe<StringQueryOperatorInput>;
   button2?: Maybe<StringQueryOperatorInput>;
   section2?: Maybe<ContentJsonSection2FilterListInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  introText?: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2455,6 +2455,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___social___facebook_url'
   | 'siteMetadata___social___youtube_url'
   | 'siteMetadata___social___instagram_url'
+  | 'siteMetadata___social___telegram_url'
+  | 'siteMetadata___social___linkedin_url'
   | 'siteMetadata___themeColor'
   | 'siteMetadata___backgroundColor'
   | 'siteMetadata___logo'
@@ -3141,6 +3143,8 @@ export type SiteSiteMetadataSocial = {
   facebook_url?: Maybe<Scalars['String']>;
   youtube_url?: Maybe<Scalars['String']>;
   instagram_url?: Maybe<Scalars['String']>;
+  telegram_url?: Maybe<Scalars['String']>;
+  linkedin_url?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataSocialFilterInput = {
@@ -3149,6 +3153,8 @@ export type SiteSiteMetadataSocialFilterInput = {
   facebook_url?: Maybe<StringQueryOperatorInput>;
   youtube_url?: Maybe<StringQueryOperatorInput>;
   instagram_url?: Maybe<StringQueryOperatorInput>;
+  telegram_url?: Maybe<StringQueryOperatorInput>;
+  linkedin_url?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -3168,57 +3174,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
-
-export type FooterImagesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type FooterImagesQuery = { education?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }>, undime?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }>, governo?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> };
-
-export type LandImagesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LandImagesQuery = { desktopImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }>, mobileImg?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> };
-
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'siteTitle' | 'siteTitleShort' | 'siteDescription' | 'siteUrl' | 'themeColor'>
-      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter_url' | 'facebook_url' | 'youtube_url' | 'instagram_url' | 'twitter'>> }
-    )> }> };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = { firstSection?: Maybe<(
-    Pick<File, 'id'>
-    & { childContentJson?: Maybe<Pick<ContentJson, 'introText' | 'title' | 'id'>> }
-  )>, secondSection?: Maybe<(
-    Pick<File, 'id'>
-    & { childContentJson?: Maybe<(
-      Pick<ContentJson, 'introText' | 'button1' | 'button2'>
-      & { section2?: Maybe<Array<Maybe<Pick<ContentJsonSection2, 'description' | 'icon'>>>> }
-    )> }
-  )>, thirdSection?: Maybe<{ frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'button'>
-      & { section3?: Maybe<Array<Maybe<(
-        Pick<MarkdownRemarkFrontmatterSection3, 'date' | 'description' | 'title'>
-        & { image?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebp_TracedSvgFragment> }> }> }
-      )>>> }
-    )> }>, metadata?: Maybe<{ siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'siteOfficial'>
-      & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'facebook_url' | 'instagram_url' | 'twitter' | 'twitter_url' | 'youtube_url'>> }
-    )> }> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

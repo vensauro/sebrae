@@ -35,6 +35,8 @@ collections:
               - { label: facebook url, name: facebook_url, widget: string }
               - { label: youtube url, name: youtube_url, widget: string }
               - { label: instagram url, name: instagram_url, widget: string }
+              - { label: linkedin url, name: linkedin_url, widget: string }
+              - { label: telegram url, name: telegram_url, widget: string }
 
       - label: 'Seção 1'
         name: 'section1'

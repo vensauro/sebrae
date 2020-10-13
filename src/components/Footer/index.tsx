@@ -2,12 +2,14 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import SebraeLogo from '../../images/sebrae-logo.svg'
+import SebraeLogo from '../../images/sebrae-logo2.svg'
 
 import FbIcon from '../../images/icon_fb.svg'
 import TtIcon from '../../images/icon_tt.svg'
 import YtIcon from '../../images/icon_yt.svg'
 import IgIcon from '../../images/icon_ig.svg'
+import TgIcon from '../../images/icon_tg.svg'
+import LdIcon from '../../images/icon_ld.svg'
 
 import { theme } from '../../global.css'
 
@@ -26,8 +28,9 @@ const StyledFooter = styled.footer`
 
 const StyledSebraeLogo = styled(SebraeLogo)`
   width: 220px;
-  & > g:nth-child(4) > path:nth-child(1) {
-    fill: #1d66c4 !important;
+  & .a,
+  & .b {
+    fill: #5596b8 !important;
   }
 `
 
@@ -69,7 +72,7 @@ function SocialLink({
   src?: string
 }) {
   return (
-    <a href={src} target="_blank">
+    <a href={src} target="_blank" rel="noreferrer">
       <Icon css={iconStyle} />
     </a>
   )
@@ -88,6 +91,7 @@ export function Footer({ social }: Props) {
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
+          alignItems: 'center',
           [theme.minq[1]]: {
             width: 'unset',
           },
@@ -125,20 +129,18 @@ export function Footer({ social }: Props) {
             '& a': {
               fontFamily: 'sans-serif',
               textDecoration: 'none',
-              color: '#1F76BF',
-              fontSize: '1.2rem',
+              color: '#5596B8',
+              fontSize: '1.1rem',
             },
           }}
         >
-          <a
-            href="https://www.sebrae.com.br/sites/PortalSebrae/ufs/ba"
-            target="_blank"
-          >
-            wwww.ba.sebrae.com.br
+          <a href="www.ba.sebrae.com.br" target="_blank" rel="noreferrer">
+            www.ba.sebrae.com.br
           </a>
           <a
             href="tel:0800 570 0800"
             target="_blank"
+            rel="noreferrer"
             css={{ fontWeight: 'bold', marginLeft: 30 }}
           >
             0800 570 0800
@@ -152,19 +154,24 @@ export function Footer({ social }: Props) {
             alignItems: 'center',
             fontSize: '1.3rem',
             fontWeight: 'lighter',
-            color: '#1F76BF',
+            color: '#5596B8',
             '& p': {
               fontFamily: 'sans-serif',
             },
           }}
         >
           <div>
+            <SocialLink icon={TgIcon} src={social.telegram_url} />
+            <SocialLink icon={LdIcon} src={social.linkedin_url} />
             <SocialLink icon={FbIcon} src={social.facebook_url} />
+            <br
+              css={{ display: 'none', [theme.maxq[0]]: { display: 'unset' } }}
+            />
             <SocialLink icon={TtIcon} src={social.twitter_url} />
             <SocialLink icon={YtIcon} src={social.youtube_url} />
             <SocialLink icon={IgIcon} src={social.instagram_url} />
           </div>
-          <p>SebraeBahia</p>
+          <p>@SebraeBahia</p>
         </div>
       </div>
     </StyledFooter>

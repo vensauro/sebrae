@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import SebraeLogo from '../../images/sebrae-logo.svg'
+import SebraeLogo from '../../images/sebrae-logo2.svg'
 import { theme } from '../../global.css'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Query } from '../../../graphql-types'
@@ -29,8 +29,9 @@ const brandContainer = css({
 const brandLogo = css({
   height: 200,
   [theme.maxq[0]]: {
-    height: 120,
-    margin: -45,
+    height: 100,
+    marginTop: 10,
+    marginBottom: -10,
   },
 })
 
@@ -39,8 +40,10 @@ const brandText = css({
   fontSize: '2rem',
   fontWeight: 'lighter',
   marginLeft: 30,
+  marginBottom: 50
   [theme.maxq[0]]: {
     marginLeft: 0,
+    marginBottom: 0,
     fontSize: '1.3rem',
   },
 })
