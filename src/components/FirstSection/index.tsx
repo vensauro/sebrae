@@ -4,7 +4,7 @@ import { Title } from '../title'
 
 const containerStyles = css({
   width: '100%',
-  padding: '35px 0',
+  paddingBottom: 35,
   background: '#903E58',
   display: 'flex',
   justifyContent: 'center',
@@ -21,10 +21,6 @@ const contentStyle = css({
   textAlign: 'center',
   lineHeight: '1.4',
 })
-
-const spanShadow = css`
-  font-weight: bold;
-`
 
 type Props = {
   content: string

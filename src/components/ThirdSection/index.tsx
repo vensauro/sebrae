@@ -11,7 +11,8 @@ import { MarkdownRemarkFrontmatter } from '../../../graphql-types'
 const Section = styled.section`
   /* height: 60vh; */
   width: 100%;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 35px;
   background: rgb(228, 180, 121);
   background: linear-gradient(
     135deg,
