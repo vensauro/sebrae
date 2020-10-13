@@ -59,7 +59,6 @@ type Props = {
 }
 
 export function SecondSection({ button1, button2, section2 }: Props) {
-  console.log({ section2 })
   return (
     <section
       css={{
@@ -75,8 +74,12 @@ export function SecondSection({ button1, button2, section2 }: Props) {
     >
       <Button>{button1}</Button>
       <div css={contentContainer}>
-        {section2.map((content) => (
-          <Content icon={content.icon} description={content.description} />
+        {section2.map((content, idx) => (
+          <Content
+            key={idx}
+            icon={content.icon}
+            description={content.description}
+          />
         ))}
       </div>
       <Button bg="#D65F54">{button2}</Button>
