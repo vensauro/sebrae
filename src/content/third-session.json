@@ -1,0 +1,23 @@
+{
+  "button": "Quero me inscrever agora",
+  "content": [
+    {
+      "date": "2020-10-12T23:00:08.532Z",
+      "title": "Título do evento",
+      "description": "Donec ullamcorper nulla non metus auctor fringilla.",
+      "image": "/img/istock-1094465844-2x.png"
+    },
+    {
+      "date": "2020-10-12T23:00:00.000Z",
+      "image": "/img/istock-950560696-2x.png",
+      "title": "Título do evento",
+      "description": "Donec ullamcorper nulla non metus auctor fringilla."
+    },
+    {
+      "date": "2020-10-12T23:00:00.000Z",
+      "image": "/img/istock-1061027984-2x.png",
+      "description": "Donec ullamcorper nulla non metus auctor fringilla.",
+      "title": "Título do evento"
+    }
+  ]
+}
