@@ -37,14 +37,14 @@ const brandLogo = css({
 
 const brandText = css({
   color: 'white',
-  fontSize: '2rem',
+  fontSize: '1.2rem',
   fontWeight: 'lighter',
   marginLeft: 30,
-  marginBottom: 50,
+  marginBottom: 40,
   [theme.maxq[0]]: {
     marginLeft: 0,
     marginBottom: 0,
-    fontSize: '1.3rem',
+    fontSize: '1rem',
   },
 })
 
