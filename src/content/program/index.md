@@ -13,10 +13,10 @@ section3:
     description: Donec ullamcorper nulla non metus auctor fringilla.
     title: O professor do novo mundo
     image: 3-istock-1245302465.jpg
-  - date: 2020-10-12T21:00:00.000Z
+  - date: 2020-10-28T13:00:00.000Z
     description: Donec ullamcorper nulla non metus auctor fringilla.
-    title: Título do evento
-    image: istock-1094465844-2x.png
+    title: "Oficina: Ensino presencial e a convergência com ambientes digitais"
+    image: 4-istock-1257213326.jpg
   - date: 2020-10-29T13:00:44.618Z
     title: "Oficina: Criação de roteiros e aulas on-line"
     image: 5-istock-1197393306.jpg
