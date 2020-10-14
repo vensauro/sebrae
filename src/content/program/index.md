@@ -20,4 +20,7 @@ section3:
   - date: 2020-10-29T13:00:44.618Z
     title: "Oficina: Criação de roteiros e aulas on-line"
     image: 5-istock-1197393306.jpg
+  - date: 2020-10-29T17:30:45.558Z
+    image: 6-istock-1213470247-1-.jpg
+    title: Histórias de Professores Empreendedores na Pandemia e suas dores e alegrias
 ---
