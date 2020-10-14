@@ -137,7 +137,7 @@ export function Home() {
         <h1 css={pageTextStyle}>
           SEMANA DO PROFESSOR <br /> DO <span>NOVO MUNDO</span>
           <p>De 27 a 30 de outubro</p>
-          <p>100% online e gratuiro</p>
+          <p>100% online e gratuito</p>
         </h1>
       </div>
     </section>
