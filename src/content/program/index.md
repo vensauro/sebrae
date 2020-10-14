@@ -23,4 +23,7 @@ section3:
   - date: 2020-10-29T17:30:45.558Z
     image: 6-istock-1213470247-1-.jpg
     title: Histórias de Professores Empreendedores na Pandemia e suas dores e alegrias
+  - date: 2020-10-29T18:30:34.771Z
+    image: priscila-boy.jpg
+    title: Os desafios e oportunidades da Nova BNCC, com Priscilla Boy
 ---
