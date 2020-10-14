@@ -74,7 +74,7 @@ export const query = graphql`
           title
           image {
             childImageSharp {
-              fixed(width: 300) {
+              fixed(width: 300, height: 200) {
                 ...GatsbyImageSharpFixed_withWebp_tracedSVG
               }
             }

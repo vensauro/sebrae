@@ -29,6 +29,14 @@ const contentStyle = css({
   marginBottom: 40,
 })
 
+const titleStyle = css({
+  maxWidth: 980,
+  margin: 'auto 0',
+  [theme.maxq[0]]: {
+    fontSize: '1.2rem',
+  },
+})
+
 type Props = {
   content: string
   button1?: string
@@ -39,7 +47,7 @@ type Props = {
 export function FirstSection({ content, title, link, button1 }: Props) {
   return (
     <section css={containerStyles}>
-      <Title color="#FEFAA3" css={{ maxWidth: 980, margin: 'auto 0' }}>
+      <Title color="#FEFAA3" css={titleStyle}>
         {title}
       </Title>
       <p css={contentStyle}>{content}</p>

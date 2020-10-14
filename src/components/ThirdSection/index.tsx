@@ -88,7 +88,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
   }
 
   useEffect(() => {
-    const interval = setInterval(nextPosition, 4000)
+    const interval = setInterval(nextPosition, 10000)
     return () => clearInterval(interval)
   }, [])
 
@@ -119,6 +119,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                   display: 'flex',
                   alignItems: 'center',
                   flexDirection: 'column',
+                  minHeight: 350,
                   [theme.maxq[0]]: {
                     marginBottom: 15,
                   },
@@ -131,21 +132,15 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                     width: 300,
                     marginTop: 10,
                     justifyContent: 'center',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
                   }}
                 >
-                  <div
-                    css={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      fontSize: '1.3rem',
-                    }}
-                  >
-                    <span>
-                      {date.getDate()} / {date.getMonth() + 1}
-                    </span>
-                    <span>{date.getHours()}h</span>
-                  </div>
-                  <span css={{ fontSize: '1.6rem', marginLeft: 15 }}>
+                  <span css={{ fontSize: '1.5rem' }}>
+                    {date.getDate()} / {date.getMonth() + 1} - {date.getHours()}
+                    :{date.getMinutes()}h
+                  </span>
+                  <span css={{ fontSize: '1.3rem', textAlign: 'unset' }}>
                     {e.title}
                   </span>
                 </div>
