@@ -17,6 +17,10 @@ section3:
     description: Donec ullamcorper nulla non metus auctor fringilla.
     title: "Oficina: Ensino presencial e a convergência com ambientes digitais"
     image: 4-istock-1257213326.jpg
+  - date: 2020-10-28T17:30:44.183Z
+    title: A Educação Empreendedora e transformadora e as possibilidades do CER, com
+      Fabiana Pinho
+    image: fabiana-pinho.jpg
   - date: 2020-10-29T13:00:44.618Z
     title: "Oficina: Criação de roteiros e aulas on-line"
     image: 5-istock-1197393306.jpg
