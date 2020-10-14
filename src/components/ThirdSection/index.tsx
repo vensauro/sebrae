@@ -138,7 +138,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                 >
                   <span css={{ fontSize: '1.5rem' }}>
                     {date.getDate()} / {date.getMonth() + 1} - {date.getHours()}
-                    :{date.getMinutes()}h
+                    :{('0' + date.getMinutes()).slice(-2)}h
                   </span>
                   <span css={{ fontSize: '1.3rem', textAlign: 'unset' }}>
                     {e.title}
