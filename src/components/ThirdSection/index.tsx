@@ -141,7 +141,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
                     }}
                   >
                     <span>
-                      {date.getDate()} | {date.getMonth() + 1}
+                      {date.getDate()} / {date.getMonth() + 1}
                     </span>
                     <span>{date.getHours()}h</span>
                   </div>
