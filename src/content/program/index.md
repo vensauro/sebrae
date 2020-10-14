@@ -24,7 +24,7 @@ section3:
   - date: 2020-10-28T18:30:27.986Z
     title: "Saúde mental do Professor: Ressignificando o momento da Pandemia, com
       Rossandro Klinjey"
-    image: rossandro2.png
+    image: imagem.png
   - date: 2020-10-29T13:00:44.618Z
     title: "Oficina: Criação de roteiros e aulas on-line"
     image: 5-istock-1197393306.jpg
