@@ -26,4 +26,7 @@ section3:
   - date: 2020-10-29T18:30:34.771Z
     image: priscila-boy.jpg
     title: Os desafios e oportunidades da Nova BNCC, com Priscilla Boy
+  - date: 2020-10-30T13:00:29.284Z
+    image: 7-istock-1250479244.jpg
+    title: "Oficina: Novas Tecnologias educacionais para EAD e Ensino Remoto"
 ---
