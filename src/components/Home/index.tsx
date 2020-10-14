@@ -71,9 +71,16 @@ const pageTextStyle = css({
     color: '#fff',
   },
   '& p': {
-    marginTop: 10,
-    color: '#E0CC9A',
     fontSize: '2.3rem',
+    // '&:first-child': {
+    color: '#E0CC9A',
+    marginTop: 5,
+    marginBottom: 2,
+    // },
+    '&:last-child': {
+      color: 'white',
+      margin: 0,
+    },
   },
   [theme.maxq[0]]: {
     '& p': {
@@ -130,6 +137,7 @@ export function Home() {
         <h1 css={pageTextStyle}>
           SEMANA DO PROFESSOR <br /> DO <span>NOVO MUNDO</span>
           <p>De 27 a 30 de outubro</p>
+          <p>100% online e gratuiro</p>
         </h1>
       </div>
     </section>

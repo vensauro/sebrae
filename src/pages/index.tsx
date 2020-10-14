@@ -26,6 +26,8 @@ const IndexPage = ({ data }: Props) => {
       <FirstSection
         content={data.firstSection.childContentJson.introText}
         title={data.firstSection.childContentJson.title}
+        link={siteOfficial}
+        button1={data.secondSection.childContentJson.button1}
       />
       <SecondSection
         {...data.secondSection.childContentJson}

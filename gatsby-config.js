@@ -28,12 +28,12 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
     'gatsby-transformer-json',
-    {
-      resolve: 'gatsby-plugin-graphql-codegen',
-      options: {
-        codegen: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-graphql-codegen',
+    //   options: {
+    //     codegen: true,
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
