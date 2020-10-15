@@ -87,10 +87,10 @@ export function ThirdSection({ buttonText, content, link }: Props) {
     }
   }
 
-  useEffect(() => {
-    const interval = setInterval(nextPosition, 10000)
-    return () => clearInterval(interval)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(nextPosition, 10000)
+  //   return () => clearInterval(interval)
+  // }, [])
 
   return (
     <Section>

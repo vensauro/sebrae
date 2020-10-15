@@ -60,5 +60,9 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: { id: 'GTM-P4H5SJK' },
+    },
   ],
 }
