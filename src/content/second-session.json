@@ -3,11 +3,11 @@
   "button2": "Quero ser professor do novo mundo",
   "section2": [
     {
-      "description": "Você vai aprender sem sair de casa",
+      "description": "Você vai aprender sem sair de casa, online",
       "icon": "/img/online-learning.svg"
     },
     {
-      "description": "Evento 100% online e 100% gratuito",
+      "description": "Evento gratuito com certificado digital",
       "icon": "/img/video-learning.svg"
     },
     {
