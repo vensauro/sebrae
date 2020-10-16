@@ -94,7 +94,7 @@ export function ThirdSection({ buttonText, content, link }: Props) {
 
   return (
     <Section>
-      <Title>PROGRAMAÇÃO</Title>
+      <Title>PROGRAMAÇÃO 27/10 A 30/10</Title>
       <div
         css={css`
           display: flex;
