@@ -22,7 +22,7 @@ const IndexPage = ({ data }: Props) => {
   const { siteOfficial, social } = data.metadata.siteMetadata
   return (
     <Layout>
-      <Home />
+      <Home link={siteOfficial} />
       <FirstSection
         content={data.firstSection.childContentJson.introText}
         title={data.firstSection.childContentJson.title}

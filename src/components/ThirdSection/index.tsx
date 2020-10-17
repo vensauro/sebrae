@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '../button'
 import { Title } from '../title'
 import Img from 'gatsby-image'

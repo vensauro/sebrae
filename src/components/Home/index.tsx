@@ -5,6 +5,7 @@ import { theme } from '../../global.css'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Query } from '../../../graphql-types'
 import Img from 'gatsby-image'
+import { Button } from '../button'
 
 const sectionStyle = css({
   background: '#5b1b26',
@@ -51,15 +52,15 @@ const brandText = css({
 const pageTextContainerStyle = css({
   display: 'flex',
   justifyContent: 'center',
+  flexDirection: 'column',
   position: 'absolute',
   top: 0,
-  height: '100%',
   paddingTop: '14%',
   paddingLeft: '10%',
   [theme.maxq[0]]: {
     paddingTop: '40%',
-    // paddingLeft: '5%',
     justifyContent: 'flex-start',
+    width: 300,
   },
 })
 
@@ -91,6 +92,12 @@ const pageTextStyle = css({
   },
 })
 
+const buttonStyle = css({
+  background: '#FEFAA3',
+  color: '#D65F54',
+  maxWidth: 380,
+})
+
 const queries = graphql`
   query LandImages {
     desktopImg: imageSharp(
@@ -115,7 +122,7 @@ type Querie = {
   mobileImg: Query['imageSharp']
 }
 
-export function Home() {
+export function Home({ link }) {
   const { desktopImg, mobileImg } = useStaticQuery<Querie>(queries)
   const sources = [
     mobileImg.fluid,
@@ -139,6 +146,9 @@ export function Home() {
           <p>De 27 a 30 de outubro</p>
           <p>100% online e gratuito</p>
         </h1>
+        <Button link={link} css={buttonStyle}>
+          INSCREVA-SE
+        </Button>
       </div>
     </section>
   )
