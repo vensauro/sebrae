@@ -1,5 +1,5 @@
 ---
-button: Quero me inscrever agora
+button: "Quero me inscrever agora "
 section3:
   - date: 2020-10-27T13:00:00.000Z
     description: Donec ullamcorper nulla non metus auctor fringilla.
