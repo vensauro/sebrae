@@ -7,12 +7,12 @@
       "icon": "/img/online-learning.svg"
     },
     {
-      "description": "Evento gratuito com certificado digital",
-      "icon": "/img/video-learning.svg"
-    },
-    {
       "description": "Você já ganha acesso a e-books gratuitos",
       "icon": "/img/ebook.svg"
+    },
+    {
+      "description": "Evento gratuito com certificado digital",
+      "icon": "/img/video-learning.svg"
     },
     {
       "description": "Sebrae é referência em Educação Empreendedora",
